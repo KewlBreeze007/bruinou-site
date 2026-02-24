@@ -3,533 +3,284 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BruinOu Engineering Consultants — Accredited Ionizing Radiation Calibration</title>
+  <title>BruinOu Engineering Consultants — SANAS Accredited Ionizing Radiation Calibration Laboratory</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ── Variables ── */
     :root {
-      --cream:   #fdf6ec;
-      --sand:    #f0e4d0;
-      --amber:   #c8823a;
-      --amber-d: #a0612a;
-      --teal:    #2e7a74;
-      --teal-l:  #3d9e97;
-      --charcoal:#2b2b2b;
-      --mid:     #5a5249;
-      --light:   #9a8f85;
-      --white:   #ffffff;
-      --radius:  14px;
-      --shadow:  0 8px 40px rgba(43,27,15,.10);
+      --navy:      #1a2a6c;
+      --navy-d:    #111d4e;
+      --navy-l:    #2a3d8f;
+      --crimson:   #c0392b;
+      --crimson-l: #e04535;
+      --purple:    #6b2d8b;
+      --purple-l:  #8b3dab;
+      --white:     #ffffff;
+      --off-white: #f7f6fc;
+      --light-bg:  #eeedf8;
+      --charcoal:  #1e1e2e;
+      --mid:       #4a4a6a;
+      --light:     #8888aa;
+      --border:    #ddddf0;
+      --radius:    14px;
+      --shadow:    0 8px 40px rgba(26,42,108,.12);
     }
 
-    /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
+      font-family: 'Nunito', sans-serif;
+      background: var(--off-white);
       color: var(--charcoal);
       line-height: 1.7;
       overflow-x: hidden;
     }
 
-    /* ── Noise overlay ── */
     body::before {
       content: '';
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-      opacity: .5;
+      background-image: radial-gradient(circle, rgba(107,45,139,.07) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
 
-    /* ── Nav ── */
+    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.1rem 5%;
-      background: rgba(253,246,236,.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(200,130,58,.15);
+      padding: 1rem 5%;
+      background: rgba(247,246,252,.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
       transition: box-shadow .3s;
     }
-    nav.scrolled { box-shadow: 0 2px 24px rgba(43,27,15,.12); }
-    .nav-logo {
-      font-family: 'Lora', serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--teal);
-      letter-spacing: -.01em;
-      text-decoration: none;
-      line-height: 1.2;
-    }
-    .nav-logo span { color: var(--amber); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      font-size: .9rem;
-      font-weight: 500;
-      color: var(--mid);
-      letter-spacing: .02em;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--amber); }
-    .nav-cta {
-      background: var(--teal);
-      color: var(--white) !important;
-      padding: .45rem 1.2rem;
-      border-radius: 50px;
-      transition: background .2s !important;
-    }
-    .nav-cta:hover { background: var(--teal-l) !important; color: var(--white) !important; }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(26,42,108,.1); }
 
-    /* ── Hero ── */
+    .nav-logo { display: flex; flex-direction: column; line-height: 1.1; text-decoration: none; }
+    .nav-logo-top { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; }
+    .nav-logo-top .bruin { color: var(--crimson); }
+    .nav-logo-top .ou    { color: var(--navy); }
+    .nav-logo-sub { font-size: .63rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--purple); }
+
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { text-decoration: none; font-size: .88rem; font-weight: 600; color: var(--mid); letter-spacing: .02em; transition: color .2s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta {
+      background: var(--crimson) !important; color: var(--white) !important;
+      padding: .45rem 1.3rem; border-radius: 50px;
+      box-shadow: 0 3px 12px rgba(192,57,43,.3);
+      transition: background .2s !important, transform .2s !important;
+    }
+    .nav-cta:hover { background: var(--crimson-l) !important; transform: translateY(-1px) !important; }
+
+    /* HERO */
     #hero {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden;
       padding: 8rem 5% 5rem;
     }
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
-      background: radial-gradient(ellipse 80% 60% at 60% 40%, #e8d5b5 0%, transparent 70%),
-                  radial-gradient(ellipse 60% 50% at 10% 80%, #c8f0ed33 0%, transparent 60%),
-                  var(--cream);
+      background:
+        radial-gradient(ellipse 70% 60% at 65% 45%, rgba(107,45,139,.12) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 10% 70%, rgba(192,57,43,.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 50% 0%, rgba(26,42,108,.07) 0%, transparent 60%),
+        var(--off-white);
     }
-    /* Orbiting rings decoration */
-    .rings {
-      position: absolute;
-      right: -120px; top: 50%;
-      transform: translateY(-50%);
-      width: 700px; height: 700px;
-      pointer-events: none; z-index: 0;
-    }
-    .ring {
-      position: absolute; border-radius: 50%;
-      border: 1.5px solid;
-      top: 50%; left: 50%;
-      transform: translate(-50%,-50%);
-      animation: spin linear infinite;
-    }
-    .ring:nth-child(1){ width:200px;height:200px; border-color:rgba(200,130,58,.35); animation-duration:12s; }
-    .ring:nth-child(2){ width:340px;height:340px; border-color:rgba(46,122,116,.25); animation-duration:22s; animation-direction:reverse; }
-    .ring:nth-child(3){ width:490px;height:490px; border-color:rgba(200,130,58,.15); animation-duration:35s; }
-    .ring:nth-child(4){ width:640px;height:640px; border-color:rgba(46,122,116,.10); animation-duration:50s; animation-direction:reverse; }
-    .ring-dot {
-      position: absolute; width: 10px; height: 10px; border-radius: 50%;
-      background: var(--amber); top: -5px; left: 50%; transform: translateX(-50%);
-    }
-    .ring:nth-child(2) .ring-dot { background: var(--teal); }
-    @keyframes spin { from{transform:translate(-50%,-50%) rotate(0deg);} to{transform:translate(-50%,-50%) rotate(360deg);} }
 
-    .hero-content {
-      position: relative; z-index: 1;
-      max-width: 640px;
-    }
+    .bubbles { position: absolute; right: 5%; top: 50%; transform: translateY(-50%); width: 480px; height: 480px; pointer-events: none; z-index: 0; }
+    .bubble { position: absolute; border-radius: 50%; animation: floatBubble ease-in-out infinite; }
+    .bubble:nth-child(1)  { width:80px;  height:80px;  background:rgba(107,45,139,.18); top:10%; left:40%; animation-duration:6s;  animation-delay:0s;   }
+    .bubble:nth-child(2)  { width:50px;  height:50px;  background:rgba(192,57,43,.22);  top:20%; left:55%; animation-duration:8s;  animation-delay:1s;   }
+    .bubble:nth-child(3)  { width:34px;  height:34px;  background:rgba(26,42,108,.2);   top:5%;  left:62%; animation-duration:7s;  animation-delay:2s;   }
+    .bubble:nth-child(4)  { width:60px;  height:60px;  background:rgba(107,45,139,.14); top:35%; left:20%; animation-duration:9s;  animation-delay:.5s;  }
+    .bubble:nth-child(5)  { width:24px;  height:24px;  background:rgba(192,57,43,.28);  top:50%; left:70%; animation-duration:5s;  animation-delay:3s;   }
+    .bubble:nth-child(6)  { width:44px;  height:44px;  background:rgba(26,42,108,.15);  top:65%; left:45%; animation-duration:10s; animation-delay:1.5s; }
+    .bubble:nth-child(7)  { width:18px;  height:18px;  background:rgba(107,45,139,.3);  top:75%; left:60%; animation-duration:6s;  animation-delay:2.5s; }
+    .bubble:nth-child(8)  { width:56px;  height:56px;  background:rgba(192,57,43,.12);  top:80%; left:25%; animation-duration:11s; animation-delay:0s;   }
+    .bubble:nth-child(9)  { width:30px;  height:30px;  background:rgba(107,45,139,.2);  top:15%; left:78%; animation-duration:7s;  animation-delay:4s;   }
+    .bubble:nth-child(10) { width:70px;  height:70px;  background:rgba(26,42,108,.1);   top:55%; left:10%; animation-duration:13s; animation-delay:1s;   }
+    @keyframes floatBubble { 0%,100%{transform:translateY(0) scale(1);opacity:.8;} 50%{transform:translateY(-18px) scale(1.05);opacity:1;} }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 1100px; width: 100%; margin: 0 auto; display: flex; align-items: center; }
+    .hero-content { max-width: 620px; }
+
     .hero-badge {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: rgba(46,122,116,.1);
-      border: 1px solid rgba(46,122,116,.25);
-      border-radius: 50px;
-      padding: .35rem 1rem;
-      font-size: .8rem;
-      font-weight: 600;
-      color: var(--teal);
-      letter-spacing: .05em;
-      text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: rgba(26,42,108,.08); border: 1px solid rgba(26,42,108,.2);
+      border-radius: 50px; padding: .4rem 1.1rem;
+      font-size: .75rem; font-weight: 700; color: var(--navy);
+      letter-spacing: .07em; text-transform: uppercase;
       margin-bottom: 1.5rem;
-      animation: fadeUp .8s ease both;
+      animation: fadeUp .7s ease both;
     }
-    .hero-badge::before {
-      content: '';
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--teal);
-      animation: pulse 2s ease infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.4;transform:scale(1.3);} }
+    .hero-badge-dot { width:8px; height:8px; border-radius:50%; background:var(--crimson); animation: pulse 2s ease infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.4;transform:scale(1.4);} }
 
     h1 {
-      font-family: 'Lora', serif;
+      font-family: 'Playfair Display', serif;
       font-size: clamp(2.4rem, 5vw, 3.8rem);
-      line-height: 1.18;
-      font-weight: 700;
-      color: var(--charcoal);
+      line-height: 1.16; font-weight: 700; color: var(--charcoal);
       margin-bottom: 1.2rem;
-      animation: fadeUp .8s .15s ease both;
+      animation: fadeUp .7s .12s ease both;
     }
-    h1 em { font-style: italic; color: var(--amber); }
-    .hero-sub {
-      font-size: 1.1rem;
-      color: var(--mid);
-      max-width: 520px;
-      margin-bottom: 2.5rem;
-      font-weight: 300;
-      animation: fadeUp .8s .3s ease both;
-    }
-    .hero-actions {
-      display: flex; gap: 1rem; flex-wrap: wrap;
-      animation: fadeUp .8s .45s ease both;
-    }
+    h1 .accent-red    { color: var(--crimson); }
+    h1 .accent-purple { color: var(--purple); font-style: italic; }
+
+    .hero-sub { font-size: 1.05rem; color: var(--mid); max-width: 520px; margin-bottom: 2.2rem; animation: fadeUp .7s .24s ease both; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeUp .7s .36s ease both; }
+
     .btn-primary {
-      background: var(--amber);
-      color: var(--white);
-      padding: .85rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: .95rem;
-      transition: background .2s, transform .2s, box-shadow .2s;
-      box-shadow: 0 4px 20px rgba(200,130,58,.35);
+      background: linear-gradient(135deg, var(--crimson), var(--purple));
+      color: var(--white); padding: .85rem 2rem; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: .95rem;
+      transition: transform .2s, box-shadow .2s, opacity .2s;
+      box-shadow: 0 5px 22px rgba(192,57,43,.35);
     }
-    .btn-primary:hover { background: var(--amber-d); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(200,130,58,.4); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(192,57,43,.4); opacity:.92; }
     .btn-secondary {
-      background: transparent;
-      color: var(--teal);
-      padding: .85rem 2rem;
-      border-radius: 50px;
-      border: 2px solid var(--teal);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: .95rem;
+      background: transparent; color: var(--navy);
+      padding: .85rem 2rem; border-radius: 50px;
+      border: 2px solid var(--navy); text-decoration: none;
+      font-weight: 700; font-size: .95rem;
       transition: background .2s, color .2s, transform .2s;
     }
-    .btn-secondary:hover { background: var(--teal); color: var(--white); transform: translateY(-2px); }
+    .btn-secondary:hover { background: var(--navy); color: var(--white); transform: translateY(-2px); }
 
-    .hero-stats {
-      position: relative; z-index: 1;
-      display: flex; gap: 2rem; margin-top: 4rem; flex-wrap: wrap;
-      animation: fadeUp .8s .6s ease both;
+    .accred-strip {
+      margin-top: 2rem;
+      display: inline-flex; align-items: center; gap: .75rem;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; padding: .6rem 1.2rem;
+      font-size: .8rem; font-weight: 700; color: var(--navy);
+      box-shadow: 0 2px 12px rgba(26,42,108,.08);
+      animation: fadeUp .7s .48s ease both;
     }
-    .stat { border-left: 3px solid var(--amber); padding-left: 1rem; }
-    .stat-num { font-family: 'Lora', serif; font-size: 1.8rem; font-weight: 700; color: var(--charcoal); }
-    .stat-label { font-size: .78rem; color: var(--light); text-transform: uppercase; letter-spacing: .08em; font-weight: 500; }
+    .accred-strip span { color: var(--crimson); font-size: 1rem; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    .hero-stats { display: flex; gap: 2.5rem; margin-top: 2rem; flex-wrap: wrap; animation: fadeUp .7s .56s ease both; }
+    .stat { border-left: 3px solid var(--purple); padding-left: 1rem; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--charcoal); }
+    .stat-label { font-size: .7rem; color: var(--light); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
 
-    /* ── Sections shared ── */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px);}  to{opacity:1;transform:translateY(0);} }
+
+    /* SHARED */
     section { position: relative; z-index: 1; }
     .section-inner { max-width: 1100px; margin: 0 auto; padding: 6rem 5%; }
-    .section-tag {
-      display: inline-block;
-      font-size: .75rem; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase;
-      color: var(--amber);
-      margin-bottom: .75rem;
-    }
-    h2 {
-      font-family: 'Lora', serif;
-      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-    }
-    h2 em { font-style: italic; color: var(--teal); }
-    .section-lead {
-      font-size: 1.05rem;
-      color: var(--mid);
-      max-width: 560px;
-      font-weight: 300;
-      margin-bottom: 3rem;
-    }
+    .section-tag { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--purple); margin-bottom: .6rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 3.5vw, 2.7rem); font-weight: 700; line-height: 1.2; color: var(--charcoal); margin-bottom: .9rem; }
+    h2 em { font-style: italic; color: var(--crimson); }
+    .section-lead { font-size: 1rem; color: var(--mid); max-width: 560px; margin-bottom: 3rem; line-height: 1.75; }
 
-    /* ── About ── */
+    /* ABOUT */
     #about { background: var(--white); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-    .about-visual {
-      position: relative;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .about-cards { display: flex; flex-direction: column; gap: 1.2rem; }
     .about-card {
-      background: var(--cream);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      border: 1px solid var(--sand);
-      position: relative;
-      overflow: hidden;
+      background: var(--off-white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.8rem 2rem;
+      position: relative; overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
     }
-    .about-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 4px;
-      background: linear-gradient(90deg, var(--amber), var(--teal));
-    }
-    .about-icon {
-      font-size: 3rem; margin-bottom: 1rem;
-      display: block;
-    }
-    .about-card h3 {
-      font-family: 'Lora', serif;
-      font-size: 1.2rem;
-      color: var(--charcoal);
-      margin-bottom: .5rem;
-    }
-    .about-card p { color: var(--mid); font-size: .95rem; }
-    .about-card-2 {
-      margin-top: 1.5rem;
-      margin-left: 2rem;
-      background: linear-gradient(135deg, var(--teal) 0%, var(--teal-l) 100%);
-      color: var(--white);
-      border: none;
-    }
-    .about-card-2::before { display: none; }
-    .about-card-2 h3, .about-card-2 p { color: var(--white); }
-    .about-card-2 p { opacity: .85; }
-    .about-text p { color: var(--mid); margin-bottom: 1rem; font-size: 1rem; }
-    .values-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: .75rem; }
-    .values-list li {
-      display: flex; align-items: flex-start; gap: .75rem;
-      font-size: .95rem; color: var(--mid);
-    }
-    .values-list li::before {
-      content: '✦';
-      color: var(--amber);
-      font-size: .7rem;
-      margin-top: .35rem;
-      flex-shrink: 0;
-    }
+    .about-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .about-card::before { content:''; position:absolute; top:0; left:0; bottom:0; width:4px; }
+    .about-card.card-crimson::before { background: var(--crimson); }
+    .about-card.card-purple::before  { background: var(--purple); }
+    .about-card.card-navy::before    { background: var(--navy); }
+    .about-card h3 { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--charcoal); margin-bottom:.4rem; }
+    .about-card p  { color:var(--mid); font-size:.9rem; line-height:1.65; }
 
-    /* ── Services ── */
-    #services { background: var(--cream); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+    .about-text p { color: var(--mid); margin-bottom: 1rem; font-size: .98rem; }
+    .values-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: .7rem; }
+    .values-list li { display: flex; align-items: flex-start; gap: .75rem; font-size: .93rem; color: var(--mid); }
+    .values-list li::before { content:'◆'; color:var(--crimson); font-size:.55rem; margin-top:.42rem; flex-shrink:0; }
+
+    /* SERVICES */
+    #services { background: var(--off-white); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; }
     .service-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      border: 1px solid var(--sand);
+      background: var(--white); border-radius: var(--radius); padding: 2rem;
+      border: 1px solid var(--border);
       transition: transform .25s, box-shadow .25s, border-color .25s;
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-      border-color: rgba(200,130,58,.3);
-    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: rgba(107,45,139,.25); }
     .service-card::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, var(--amber), var(--teal));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform .3s;
+      content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+      background: linear-gradient(90deg, var(--crimson), var(--purple), var(--navy));
+      transform: scaleX(0); transform-origin: left; transition: transform .35s;
     }
     .service-card:hover::after { transform: scaleX(1); }
-    .service-icon {
-      width: 52px; height: 52px;
-      background: var(--cream);
-      border-radius: 12px;
-      display: grid; place-items: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
-      border: 1px solid var(--sand);
-    }
-    .service-card h3 {
-      font-family: 'Lora', serif;
-      font-size: 1.1rem;
-      color: var(--charcoal);
-      margin-bottom: .5rem;
-    }
-    .service-card p { color: var(--mid); font-size: .9rem; line-height: 1.6; }
-    .service-tag {
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--teal);
-      background: rgba(46,122,116,.08);
-      padding: .25rem .75rem;
-      border-radius: 50px;
-    }
+    .service-icon { width:50px;height:50px; background:linear-gradient(135deg,rgba(107,45,139,.1),rgba(26,42,108,.1)); border-radius:12px; display:grid;place-items:center; font-size:1.4rem; margin-bottom:1.1rem; }
+    .service-card h3 { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--charcoal); margin-bottom:.45rem; }
+    .service-card p  { color:var(--mid); font-size:.88rem; line-height:1.65; }
+    .service-tag { display:inline-block; margin-top:.9rem; font-size:.7rem; font-weight:800; letter-spacing:.07em; text-transform:uppercase; color:var(--navy); background:rgba(26,42,108,.07); padding:.25rem .8rem; border-radius:50px; }
 
-    /* ── Accreditation ── */
-    #accreditation { background: var(--charcoal); color: var(--white); }
-    #accreditation .section-tag { color: #e8c07a; }
+    /* ACCREDITATION */
+    #accreditation { background: linear-gradient(160deg, var(--navy-d) 0%, var(--navy) 50%, #2d1a4e 100%); color: var(--white); }
+    #accreditation .section-tag { color: rgba(255,255,255,.5); }
     #accreditation h2 { color: var(--white); }
-    #accreditation h2 em { color: #e8c07a; }
-    #accreditation .section-lead { color: #b5a99e; }
-    .accred-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
-    .accred-block {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--radius);
-      padding: 2rem;
-      transition: background .25s, border-color .25s;
-    }
-    .accred-block:hover {
-      background: rgba(255,255,255,.08);
-      border-color: rgba(232,192,122,.3);
-    }
-    .accred-block h3 {
-      font-family: 'Lora', serif;
-      font-size: 1.15rem;
-      color: var(--white);
-      margin-bottom: .75rem;
-      display: flex; align-items: center; gap: .6rem;
-    }
-    .accred-block h3 span { font-size: 1.3rem; }
-    .accred-block p { color: #b5a99e; font-size: .9rem; line-height: 1.65; }
-    .accred-highlight {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, rgba(200,130,58,.2), rgba(46,122,116,.2));
-      border-color: rgba(200,130,58,.4);
-      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
-    }
-    .accred-highlight-num {
-      font-family: 'Lora', serif;
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #e8c07a;
-      line-height: 1;
-      flex-shrink: 0;
-    }
-    .accred-highlight-text h3 { color: var(--white); font-size: 1rem; margin-bottom: .4rem; }
-    .accred-highlight-text p { color: #b5a99e; font-size: .9rem; }
+    #accreditation h2 em { color: #e88080; }
+    #accreditation .section-lead { color: rgba(255,255,255,.65); }
 
-    /* ── Contact ── */
+    .accred-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .accred-block {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius); padding: 1.8rem 2rem;
+      transition: background .25s, border-color .25s, transform .25s;
+    }
+    .accred-block:hover { background: rgba(255,255,255,.1); border-color: rgba(224,69,53,.4); transform: translateY(-3px); }
+    .accred-block h3 { font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--white); margin-bottom:.6rem; display:flex;align-items:center;gap:.5rem; }
+    .accred-block p  { color: rgba(255,255,255,.62); font-size:.88rem; line-height:1.7; }
+
+    .accred-highlight { grid-column:1/-1; background:linear-gradient(135deg,rgba(192,57,43,.25),rgba(107,45,139,.25)); border-color:rgba(192,57,43,.5); display:flex;align-items:center;gap:2rem;flex-wrap:wrap; }
+    .accred-num-block { text-align:center; flex-shrink:0; }
+    .accred-big   { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700; color:#e88080; line-height:1.1; }
+    .accred-small { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.5); margin-top:.3rem; }
+
+    /* CONTACT */
     #contact { background: var(--white); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    .contact-info h3 {
-      font-family: 'Lora', serif;
-      font-size: 1.3rem;
-      color: var(--charcoal);
-      margin-bottom: 1.5rem;
-    }
-    .contact-item {
-      display: flex; align-items: flex-start; gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .contact-item-icon {
-      width: 42px; height: 42px; flex-shrink: 0;
-      background: var(--cream);
-      border: 1px solid var(--sand);
-      border-radius: 10px;
-      display: grid; place-items: center;
-      font-size: 1.1rem;
-    }
-    .contact-item-text strong { display: block; font-size: .8rem; color: var(--light); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .15rem; }
-    .contact-item-text span { color: var(--mid); font-size: .95rem; }
-    .contact-form {
-      background: var(--cream);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      border: 1px solid var(--sand);
-    }
-    .contact-form h3 {
-      font-family: 'Lora', serif;
-      font-size: 1.3rem;
-      color: var(--charcoal);
-      margin-bottom: 1.5rem;
-    }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-group { margin-bottom: 1rem; }
-    .form-group label {
-      display: block;
-      font-size: .8rem; font-weight: 600;
-      color: var(--mid);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: .4rem;
-    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+    .contact-info h3 { font-family:'Playfair Display',serif; font-size:1.25rem; color:var(--charcoal); margin-bottom:1.4rem; }
+    .contact-item { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.4rem; }
+    .contact-item-icon { width:42px;height:42px;flex-shrink:0; background:linear-gradient(135deg,rgba(107,45,139,.1),rgba(26,42,108,.1)); border:1px solid var(--border); border-radius:10px; display:grid;place-items:center;font-size:1.1rem; }
+    .contact-item-text strong { display:block; font-size:.72rem; color:var(--light); text-transform:uppercase; letter-spacing:.07em; margin-bottom:.1rem; }
+    .contact-item-text span { color:var(--mid); font-size:.93rem; }
+
+    .contact-form { background:var(--off-white); border-radius:var(--radius); padding:2.5rem; border:1px solid var(--border); }
+    .contact-form h3 { font-family:'Playfair Display',serif; font-size:1.25rem; color:var(--charcoal); margin-bottom:1.4rem; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+    .form-group { margin-bottom:1rem; }
+    .form-group label { display:block; font-size:.72rem; font-weight:800; color:var(--mid); text-transform:uppercase; letter-spacing:.07em; margin-bottom:.4rem; }
     .form-group input,
     .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: .75rem 1rem;
-      background: var(--white);
-      border: 1.5px solid var(--sand);
-      border-radius: 8px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .95rem;
-      color: var(--charcoal);
-      transition: border-color .2s, box-shadow .2s;
-      outline: none;
-    }
+    .form-group textarea { width:100%; padding:.75rem 1rem; background:var(--white); border:1.5px solid var(--border); border-radius:8px; font-family:'Nunito',sans-serif; font-size:.93rem; color:var(--charcoal); outline:none; transition:border-color .2s,box-shadow .2s; }
     .form-group input:focus,
     .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--teal);
-      box-shadow: 0 0 0 3px rgba(46,122,116,.1);
-    }
-    .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-submit {
-      width: 100%;
-      padding: .9rem;
-      background: var(--teal);
-      color: var(--white);
-      border: none;
-      border-radius: 50px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background .2s, transform .2s, box-shadow .2s;
-      box-shadow: 0 4px 20px rgba(46,122,116,.3);
-      margin-top: .5rem;
-    }
-    .form-submit:hover { background: var(--teal-l); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(46,122,116,.35); }
+    .form-group textarea:focus { border-color:var(--purple); box-shadow:0 0 0 3px rgba(107,45,139,.1); }
+    .form-group textarea { resize:vertical; min-height:110px; }
+    .form-submit { width:100%; padding:.9rem; background:linear-gradient(135deg,var(--crimson),var(--purple)); color:var(--white); border:none; border-radius:50px; font-family:'Nunito',sans-serif; font-size:1rem; font-weight:700; cursor:pointer; transition:opacity .2s,transform .2s,box-shadow .2s; box-shadow:0 5px 22px rgba(192,57,43,.3); margin-top:.5rem; }
+    .form-submit:hover { opacity:.9; transform:translateY(-2px); box-shadow:0 10px 28px rgba(192,57,43,.35); }
 
-    /* ── Footer ── */
-    footer {
-      background: var(--charcoal);
-      color: #b5a99e;
-      text-align: center;
-      padding: 2.5rem 5%;
-      font-size: .875rem;
-      position: relative; z-index: 1;
-    }
-    footer .footer-logo {
-      font-family: 'Lora', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: .5rem;
-    }
-    footer .footer-logo span { color: #e8c07a; }
-    footer p { margin-top: .25rem; }
+    /* FOOTER */
+    footer { background:var(--charcoal); color:rgba(255,255,255,.5); padding:2.5rem 5%; text-align:center; font-size:.85rem; position:relative; z-index:1; }
+    .footer-logo-top { font-family:'Playfair Display',serif; font-size:1.3rem; font-weight:700; margin-bottom:.2rem; }
+    .footer-logo-top .bruin { color:#e88080; }
+    .footer-logo-top .ou   { color:#8899dd; }
+    footer p { margin-top:.2rem; }
+    .footer-accred { color:rgba(255,255,255,.3); font-size:.75rem; margin-top:.6rem; }
 
-    /* ── Fade-in on scroll ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* FADE IN */
+    .fade-in { opacity:0; transform:translateY(26px); transition:opacity .7s ease,transform .7s ease; }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
 
-    /* ── Responsive ── */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .about-grid, .contact-grid, .accred-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .rings { display: none; }
-      .hero-stats { gap: 1.5rem; }
+      .bubbles { display: none; }
       .accred-highlight { gap: 1rem; }
     }
   </style>
@@ -538,7 +289,10 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="#hero" class="nav-logo">BruinOu <span>Engineering</span> Consultants</a>
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-top"><span class="bruin">Bruin</span><span class="ou">Ou</span></div>
+    <div class="nav-logo-sub">Engineering Consultants</div>
+  </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -550,33 +304,39 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <div class="rings">
-    <div class="ring"><div class="ring-dot"></div></div>
-    <div class="ring"><div class="ring-dot"></div></div>
-    <div class="ring"></div>
-    <div class="ring"></div>
+  <div class="bubbles">
+    <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    <div class="bubble"></div>
   </div>
-  <div style="max-width:1100px;width:100%;margin:0 auto;position:relative;z-index:1;display:flex;align-items:center;">
+  <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">ISO/IEC 17025 Accredited Laboratory</div>
-      <h1>Precision You Can<br><em>Measure & Trust</em></h1>
-      <p class="hero-sub">Accredited ionizing radiation calibration services — delivering traceable, reliable measurements for dosimetry, radiation protection, and medical physics applications.</p>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        SANAS Accredited · CAL 112-12-00
+      </div>
+      <h1>Precision Calibration,<br><span class="accent-purple">Trusted by</span> <span class="accent-red">Science</span></h1>
+      <p class="hero-sub">BruinOu Engineering Consultants is a SANAS accredited ionizing radiation calibration laboratory — delivering traceable, reliable measurements for radiation protection, medical physics, and industrial applications across South Africa.</p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Request a Quote</a>
         <a href="#services" class="btn-secondary">Our Services</a>
       </div>
+      <div class="accred-strip">
+        <span>🏅</span> SANAS Accreditation No. CAL 112-12-00 &nbsp;·&nbsp; ISO/IEC 17025
+      </div>
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-num">25+</div>
-          <div class="stat-label">Years Accredited</div>
+          <div class="stat-num">SANAS</div>
+          <div class="stat-label">Accredited Lab</div>
         </div>
         <div class="stat">
-          <div class="stat-num">10k+</div>
-          <div class="stat-label">Instruments Calibrated</div>
+          <div class="stat-num">ISO 17025</div>
+          <div class="stat-label">Quality Standard</div>
         </div>
         <div class="stat">
-          <div class="stat-num">0.5%</div>
-          <div class="stat-label">Measurement Uncertainty</div>
+          <div class="stat-num">NMISA</div>
+          <div class="stat-label">Traceable Standards</div>
         </div>
       </div>
     </div>
@@ -587,29 +347,32 @@
 <section id="about">
   <div class="section-inner">
     <div class="about-grid">
-      <div class="about-visual fade-in">
-        <div class="about-card">
-          <span class="about-icon">⚛️</span>
-          <h3>Nationally Recognized Standards</h3>
-          <p>Our measurements are traceable to national metrology institutes, ensuring your instruments meet the highest regulatory and safety standards.</p>
+      <div class="about-cards fade-in">
+        <div class="about-card card-crimson">
+          <h3>⚛️ National Standard Traceability</h3>
+          <p>All our calibrations are traceable to NMISA and international primary standards through a documented, unbroken chain of comparisons with stated measurement uncertainties.</p>
         </div>
-        <div class="about-card about-card-2">
-          <span class="about-icon">🛡️</span>
-          <h3>Independent & Impartial</h3>
-          <p>As an accredited body, we operate with complete independence — providing objective calibration data you and your regulators can rely on.</p>
+        <div class="about-card card-purple">
+          <h3>🏅 SANAS Accredited Independence</h3>
+          <p>As a SANAS accredited laboratory (CAL 112-12-00), we operate with complete impartiality — our certificates are accepted by South African and international regulators.</p>
+        </div>
+        <div class="about-card card-navy">
+          <h3>🤝 Friendly, Expert Support</h3>
+          <p>From first enquiry to certificate delivery, our approachable team of specialists guides you through the process with care, clarity, and professionalism.</p>
         </div>
       </div>
       <div class="about-text fade-in" style="transition-delay:.15s">
         <span class="section-tag">About Us</span>
-        <h2>A Trusted Partner in <em>Radiation Safety</em></h2>
-        <p>We are a fully accredited ionizing radiation calibration laboratory serving hospitals, nuclear facilities, industrial operators, and research institutions. Our team of certified medical physicists and radiation protection specialists bring decades of hands-on experience to every calibration.</p>
-        <p>From diagnostic X-ray equipment to gamma irradiators, our laboratory maintains a broad scope of accreditation to support your compliance, quality assurance, and radiation protection programs.</p>
+        <h2>South Africa's <em>Trusted</em> Radiation Calibration Partner</h2>
+        <p>BruinOu Engineering Consultants is a fully SANAS accredited ionizing radiation calibration laboratory serving hospitals, nuclear facilities, industrial operators, government bodies, and research institutions across South Africa.</p>
+        <p>Our team of certified medical physicists and radiation protection specialists combines deep technical expertise with a genuine commitment to client service — making complex calibration work simple and stress-free for you.</p>
         <ul class="values-list">
-          <li>Measurement traceability to NIST and international standards</li>
-          <li>Short turnaround times with express options available</li>
+          <li>Metrological traceability to NMISA and international NMI standards</li>
+          <li>Fast turnaround times — express services available on request</li>
           <li>Detailed calibration certificates with full uncertainty budgets</li>
-          <li>On-site calibration services available nationwide</li>
-          <li>Friendly, expert technical support before and after service</li>
+          <li>On-site calibration services available across South Africa</li>
+          <li>Support with regulatory compliance and radiation protection programs</li>
+          <li>Warm, dedicated client service from first contact to certificate</li>
         </ul>
       </div>
     </div>
@@ -621,18 +384,18 @@
   <div class="section-inner">
     <span class="section-tag fade-in">What We Do</span>
     <h2 class="fade-in">Our Calibration <em>Services</em></h2>
-    <p class="section-lead fade-in">Comprehensive calibration across a wide range of ionizing radiation sources and detector types.</p>
+    <p class="section-lead fade-in">Comprehensive calibration across a wide range of ionizing radiation sources, quantities, and detector types.</p>
     <div class="services-grid">
       <div class="service-card fade-in">
         <div class="service-icon">🏥</div>
         <h3>Diagnostic & Therapeutic Radiology</h3>
-        <p>Calibration of ionization chambers, electrometers, and dosimeters used in diagnostic imaging, CT, fluoroscopy, and radiation therapy.</p>
+        <p>Calibration of ionization chambers, electrometers, and dosimeters for diagnostic imaging, CT, fluoroscopy, mammography, and radiation therapy.</p>
         <span class="service-tag">Medical Physics</span>
       </div>
       <div class="service-card fade-in" style="transition-delay:.1s">
         <div class="service-icon">☢️</div>
         <h3>Gamma & Beta Dosimetry</h3>
-        <p>Traceable calibration for gamma and beta radiation survey meters, personal dosimeters, and area monitors using Cs-137, Co-60, and Sr-90 reference sources.</p>
+        <p>Traceable calibration of gamma and beta radiation survey meters, personal dosimeters, and area monitors using Cs-137, Co-60, and Sr-90 reference sources.</p>
         <span class="service-tag">Radiation Protection</span>
       </div>
       <div class="service-card fade-in" style="transition-delay:.2s">
@@ -644,19 +407,19 @@
       <div class="service-card fade-in" style="transition-delay:.3s">
         <div class="service-icon">🧪</div>
         <h3>Neutron Dosimetry</h3>
-        <p>Specialized calibration services for neutron survey instruments and rem meters in nuclear power, research reactor, and accelerator environments.</p>
+        <p>Specialised calibration for neutron survey instruments and rem meters in nuclear power, research reactor, and accelerator environments.</p>
         <span class="service-tag">Nuclear Facilities</span>
       </div>
       <div class="service-card fade-in" style="transition-delay:.4s">
         <div class="service-icon">📊</div>
         <h3>Radiation Monitoring Systems</h3>
-        <p>Testing and calibration of fixed area radiation monitors, continuous air monitors, and stack monitoring systems for industrial and nuclear applications.</p>
+        <p>Testing and calibration of fixed area radiation monitors, continuous air monitors, and stack monitoring systems for industrial and nuclear facilities.</p>
         <span class="service-tag">Environmental</span>
       </div>
       <div class="service-card fade-in" style="transition-delay:.5s">
         <div class="service-icon">🚐</div>
         <h3>On-Site Calibration</h3>
-        <p>Our mobile calibration team can come to your facility with portable reference standards — ideal for large equipment or time-sensitive compliance requirements.</p>
+        <p>Our mobile team travels to your facility with portable reference standards — ideal for large equipment or time-sensitive compliance requirements anywhere in South Africa.</p>
         <span class="service-tag">Field Service</span>
       </div>
     </div>
@@ -668,29 +431,32 @@
   <div class="section-inner">
     <span class="section-tag fade-in">Standards & Compliance</span>
     <h2 class="fade-in">Our <em>Accreditation</em></h2>
-    <p class="section-lead fade-in" style="color:#b5a99e">Our laboratory operates under the most stringent quality frameworks, so you can be confident in every certificate we issue.</p>
+    <p class="section-lead fade-in">We operate under the most rigorous quality frameworks so every certificate we issue carries full regulatory confidence.</p>
     <div class="accred-grid">
       <div class="accred-block fade-in">
-        <h3><span>🏅</span> ISO/IEC 17025:2017</h3>
-        <p>Full accreditation under the international standard for testing and calibration laboratories. Our scope covers a wide range of ionizing radiation quantities and energy ranges.</p>
+        <h3><span>🏅</span> SANAS Accreditation</h3>
+        <p>Fully accredited by the South African National Accreditation System (SANAS) under accreditation number <strong style="color:#e88080">CAL 112-12-00</strong>, covering a broad scope of ionizing radiation quantities and energy ranges.</p>
       </div>
       <div class="accred-block fade-in" style="transition-delay:.1s">
-        <h3><span>🔗</span> Metrological Traceability</h3>
-        <p>All calibrations are traceable to national primary standards through an unbroken chain of comparisons with stated measurement uncertainties.</p>
+        <h3><span>📋</span> ISO/IEC 17025:2017</h3>
+        <p>Our quality management system fully complies with ISO/IEC 17025:2017 — the international standard for testing and calibration laboratory competence and impartiality.</p>
       </div>
       <div class="accred-block fade-in" style="transition-delay:.2s">
-        <h3><span>📋</span> Regulatory Compliance Support</h3>
-        <p>Our calibration certificates are accepted by radiation protection authorities, nuclear regulators, and hospital accreditation bodies worldwide.</p>
+        <h3><span>🔗</span> Metrological Traceability</h3>
+        <p>All calibrations trace back to NMISA (National Metrology Institute of South Africa) and international primary standards through a fully documented, unbroken chain of comparisons.</p>
       </div>
       <div class="accred-block fade-in" style="transition-delay:.3s">
         <h3><span>🔄</span> Proficiency Testing</h3>
-        <p>We participate regularly in international intercomparisons and proficiency testing exercises to demonstrate our ongoing technical competence.</p>
+        <p>We participate regularly in SANAS-approved proficiency testing schemes and international intercomparisons to demonstrate and maintain our ongoing technical competence.</p>
       </div>
       <div class="accred-block accred-highlight fade-in" style="transition-delay:.4s">
-        <div class="accred-highlight-num">A+ Rating</div>
-        <div class="accred-highlight-text">
-          <h3>Consistently Excellent Assessment Outcomes</h3>
-          <p>Our laboratory has maintained accreditation without corrective actions across five consecutive assessment cycles, reflecting our commitment to quality and continuous improvement.</p>
+        <div class="accred-num-block">
+          <div class="accred-big">CAL<br>112-12-00</div>
+          <div class="accred-small">SANAS Number</div>
+        </div>
+        <div>
+          <h3 style="color:#fff;font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:.4rem;">Recognised by South African Regulators & Beyond</h3>
+          <p style="color:rgba(255,255,255,.62);font-size:.88rem;line-height:1.7;">Our certificates are recognised by the National Nuclear Regulator (NNR), the Department of Health, hospital accreditation bodies, and industry regulators — giving you complete confidence in every result we deliver.</p>
         </div>
       </div>
     </div>
@@ -704,40 +470,39 @@
       <div>
         <span class="section-tag fade-in">Get In Touch</span>
         <h2 class="fade-in">Request a <em>Quote</em></h2>
-        <p class="section-lead fade-in" style="margin-bottom:2rem;">Whether you have a single instrument or a fleet of dosimeters, we're here to help. Reach out and a specialist will respond within one business day.</p>
-        <div class="contact-info fade-in">
+        <p class="section-lead fade-in" style="margin-bottom:2rem;">Whether you have a single instrument or a full fleet of dosimeters, we're here to help. A specialist will respond within one business day.</p>
+        <div class="contact-info fade-in" style="transition-delay:.1s">
           <h3>Contact Information</h3>
-          <div class="contact-item">
-            <div class="contact-item-icon">📍</div>
-            <div class="contact-item-text">
-              <strong>Address</strong>
-              <span>123 Laboratory Drive, Suite 200<br>Science City, ST 00000</span>
-            </div>
-          </div>
           <div class="contact-item">
             <div class="contact-item-icon">📞</div>
             <div class="contact-item-text">
               <strong>Phone</strong>
-              <span>+1 (555) 000-0000</span>
+              <span>016 100 1611</span>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">✉️</div>
             <div class="contact-item-text">
               <strong>Email</strong>
-              <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b2d1d3dedbd0c0d3c6dbdddcf2c0d3d6d1d3deded3d09cd1dddf">[email&#160;protected]</a></span>
+              <span>info@bruinou.com</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <strong>Location</strong>
+              <span>South Africa</span>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-item-icon">🕐</div>
             <div class="contact-item-text">
               <strong>Hours</strong>
-              <span>Monday – Friday, 8:00 AM – 5:00 PM</span>
+              <span>Monday – Friday, 8:00 AM – 5:00 PM SAST</span>
             </div>
           </div>
         </div>
       </div>
-
       <div class="contact-form fade-in" style="transition-delay:.2s">
         <h3>Send Us a Message</h3>
         <div class="form-row">
@@ -751,12 +516,12 @@
           </div>
         </div>
         <div class="form-group">
-          <label>Organization</label>
+          <label>Organisation</label>
           <input type="text" placeholder="Hospital / Company / Institution" />
         </div>
         <div class="form-group">
           <label>Email Address</label>
-          <input type="email" placeholder="jane.smith@hospital.org" />
+          <input type="email" placeholder="jane.smith@organisation.co.za" />
         </div>
         <div class="form-group">
           <label>Service Needed</label>
@@ -783,32 +548,37 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">BruinOu <span>Engineering</span> Consultants</div>
-  <p>Accredited Ionizing Radiation Calibration Laboratory · ISO/IEC 17025:2017</p>
-  <p style="margin-top:.5rem;font-size:.8rem;opacity:.5;">© 2025 BruinOu Engineering Consultants. All rights reserved. · Replace placeholder content with your laboratory's details.</p>
+  <div class="footer-logo-top"><span class="bruin">Bruin</span><span class="ou">Ou</span></div>
+  <p>Engineering Consultants</p>
+  <p class="footer-accred">SANAS Accredited Ionizing Radiation Calibration Laboratory · CAL 112-12-00 · ISO/IEC 17025:2017</p>
+  <p style="margin-top:.8rem;font-size:.75rem;opacity:.3;">© 2025 BruinOu Engineering Consultants. All rights reserved.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Nav scroll shadow
+<script>
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 20);
   });
 
-  // Fade-in on scroll
   const fadeEls = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.1 });
   fadeEls.forEach(el => observer.observe(el));
 
-  // Form submit demo
   function handleSubmit(e) {
-    e.preventDefault();
     const btn = e.target;
     btn.textContent = '✓ Request Sent!';
+    btn.style.background = 'linear-gradient(135deg, #27ae60, #1a7a44)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Send Request →';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3000);
+  }
+</script>
+</body>
+</html>
